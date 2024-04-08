@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function timSoLonNhatNhoHon(arr, num) {
+            // Lọc ra các số nhỏ hơn hoặc bằng num
+            let filteredArray = arr.filter(function(item) {
+                return item <= num;
+            });
+
+            // Nếu mảng lọc rỗng, trả về null hoặc giá trị mặc định khác
+            if (filteredArray.length === 0) {
+                return null;
+            }
+
+           // Tìm số lớn nhất trong mảng đã lọc
+           let max = Math.max(...filteredArray);
+           return max;
+        }
+
+        // Ví dụ sử dụng hàm
+        let mang = [1, 5, 10, 15, 20];
+        let soNguyen = 12;
+        console.log(timSoLonNhatNhoHon(mang, soNguyen)); // Kết quả: 10
+
+    </script>
+</body>
+</html>

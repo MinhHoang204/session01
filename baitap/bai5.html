@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Tạo mảng chứa các đối tượng tài khoản
+        let accounts = [
+           { userName: "user1", password: "pass word1" },
+           { userName: "user2", password: "password2" },
+           { userName: "user3", password: "pass word3" },
+        // Thêm các tài khoản khác nếu cần
+        ];
+
+        // Sử dụng hàm some để kiểm tra xem có tài khoản nào password chứa dấu cách không
+        let hasPasswordWithSpace = accounts.some(function(account, index) {
+            if (account.password.includes(' ')) {
+               console.log(`Account at index ${index} has password with space.`);
+               return true;
+            }
+            return false;
+        });
+
+        // Nếu không có tài khoản nào password chứa dấu cách, in ra mọi tài khoản hợp lệ
+        if (!hasPasswordWithSpace) {
+            console.log("All passwords are valid.");
+        }
+
+    </script>
+</body>
+</html>

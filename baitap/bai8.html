@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function chenMang(arr1, arr2, viTri) {
+            // Sử dụng spread operator (...) để tạo một bản sao của arr1
+            let newArr = [...arr1];
+    
+            // Chèn mảng arr2 vào newArr tại vị trí viTri
+            newArr.splice(viTri, 0, ...arr2);
+    
+            return newArr;
+        }
+
+        // Ví dụ sử dụng hàm
+        let mang1 = [1, 2, 'a', 6, 7];
+        let mang2 = ['b', 'hai'];
+        let viTri = 2;
+        console.log(chenMang(mang1, mang2, viTri)); // Kết quả: [1, 2, 'b', 'hai', 'a', 6, 7]
+
+    </script>
+</body>
+</html>
